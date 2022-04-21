@@ -1,0 +1,1187 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/16/2022 7:41:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="THAITRAN"
+  DTS:CreatorName="THAITRAN\tgtha"
+  DTS:DTSID="{918682D3-6A66-4FDA-ADD9-7C66928DAE50}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{5BB7D5CF-A3EA-42F7-9AA2-5C397074596F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Assessment]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{966786D3-9C23-44ED-869F-7CF82A10C967}"
+      DTS:ObjectName="Assessment">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\MyDesktop\ThaiTran\Personal_Project\OULAD\data\assessments.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_module"
+              DTS:DTSID="{BB9DC937-1C89-447A-A91A-C41A3EB7399C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_presentation"
+              DTS:DTSID="{4235AE8D-4666-492E-B8CB-F0D14CAE7E4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_assessment"
+              DTS:DTSID="{89488B40-A01E-4856-8E94-3544890FEF2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assessment_type"
+              DTS:DTSID="{3A2495AB-56C9-44DC-9DFF-BCC32A216151}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_days"
+              DTS:DTSID="{C6DC64EE-2CF3-4B5E-996D-CBAC8F3CB742}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weight"
+              DTS:DTSID="{BAC1A479-A091-447A-AAEC-39B23C8A05F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_presentation"
+              DTS:DTSID="{B8FFE816-C1EE-442B-998B-C4DB8436632F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[StudentInfo]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{685E9585-B9BB-406C-9054-DD06E57C6BD4}"
+      DTS:ObjectName="StudentInfo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\MyDesktop\ThaiTran\Personal_Project\OULAD\data\studentInfo.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_module"
+              DTS:DTSID="{EF1678DD-8CC0-4B4B-BDB4-CCA8E2CF5594}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_presentation"
+              DTS:DTSID="{B13916FB-EAF8-4BD5-A132-840B8F7CF212}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_student"
+              DTS:DTSID="{1564BC14-90E8-4603-B73C-07075B37873A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{65699806-5E36-45C6-8E6A-B179C6D8305C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{E6FF8070-D446-4663-B754-BDB476F4AA34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="highest_education"
+              DTS:DTSID="{4408881C-F293-4D0B-B7AF-F7C560AC3526}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="imd_band"
+              DTS:DTSID="{382E5600-CB88-49C5-ABB4-BF677BD9ADC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_band"
+              DTS:DTSID="{3B38AE68-4732-4538-816A-DBD7B6A19D34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="num_of_prev_attempts"
+              DTS:DTSID="{EFD3FC14-4184-4E67-AAD2-72C80E21EB06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="studied_credits"
+              DTS:DTSID="{38247DE6-7E9C-4FA1-A4D5-8A71AE58A3A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="disability"
+              DTS:DTSID="{E49DBB76-F6F3-4CBD-A4D0-106D11D778AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="final_result"
+              DTS:DTSID="{8876A432-5C23-443D-8107-0CEDCF6D265F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Vle]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C8B2E5D2-19B2-4F66-9387-C1B83F8A60F2}"
+      DTS:ObjectName="Vle">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\MyDesktop\ThaiTran\Personal_Project\OULAD\data\vle.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_site"
+              DTS:DTSID="{AD90E1D4-46FB-4EA0-87C3-A38C82957018}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_module"
+              DTS:DTSID="{B0CC7587-F806-46C0-B234-A34FFF07B6EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_presentation"
+              DTS:DTSID="{B2320D70-50C0-4A3D-8B31-BFA58F8462E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="activity_type"
+              DTS:DTSID="{2058AEF7-7F4B-432B-932B-92BC83783693}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ODS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{399E90B5-6FBC-479B-B561-46392C29C5AE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ODS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ODS\Assessment"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Assessment"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ODS\Assessment.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Assessment]"
+                  connectionManagerRefId="Package.ConnectionManagers[Assessment]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ODS\Assessment.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[code_module]"
+                      name="code_module"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      name="code_presentation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[id_assessment]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[id_assessment]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[id_assessment]"
+                      name="id_assessment"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[assessment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[assessment_type]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[assessment_type]"
+                      name="assessment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[number_of_days]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[number_of_days]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[number_of_days]"
+                      name="number_of_days"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[weight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[weight]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[weight]"
+                      name="weight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[date_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[date_presentation]"
+                      length="50"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Output].Columns[date_presentation]"
+                      name="date_presentation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_module" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_presentation" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[id_assessment]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_assessment" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[assessment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="assessment_type" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[number_of_days]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="number_of_days" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[weight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="weight" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Output].ExternalColumns[date_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date_presentation" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ODS\Assessment.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ODS\Assessment.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ODS\StudentInfo"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="StudentInfo"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ODS\StudentInfo.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[StudentInfo]"
+                  connectionManagerRefId="Package.ConnectionManagers[StudentInfo]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[code_module]"
+                      name="code_module"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      name="code_presentation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[id_student]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[id_student]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[id_student]"
+                      name="id_student"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[highest_education]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[highest_education]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[highest_education]"
+                      name="highest_education"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[imd_band]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[imd_band]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[imd_band]"
+                      name="imd_band"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[age_band]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[age_band]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[age_band]"
+                      name="age_band"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[num_of_prev_attempts]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[num_of_prev_attempts]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[num_of_prev_attempts]"
+                      name="num_of_prev_attempts"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[studied_credits]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[studied_credits]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[studied_credits]"
+                      name="studied_credits"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[disability]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[disability]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[disability]"
+                      name="disability"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[final_result]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[final_result]"
+                      length="50"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].Columns[final_result]"
+                      name="final_result"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_module" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_presentation" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[id_student]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_student" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[highest_education]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="highest_education" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[imd_band]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="imd_band" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[age_band]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age_band" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[num_of_prev_attempts]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="num_of_prev_attempts" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[studied_credits]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="studied_credits" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[disability]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="disability" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Output].ExternalColumns[final_result]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="final_result" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ODS\StudentInfo.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ODS\Vle"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Vle"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ODS\Vle.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vle]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vle]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ODS\Vle.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[id_site]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[id_site]"
+                      length="50"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[id_site]"
+                      name="id_site"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      length="50"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[code_module]"
+                      name="code_module"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      length="50"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[code_presentation]"
+                      name="code_presentation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[activity_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[activity_type]"
+                      length="50"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Output].Columns[activity_type]"
+                      name="activity_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[id_site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_site" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[code_module]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_module" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[code_presentation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="code_presentation" />
+                    <externalMetadataColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Output].ExternalColumns[activity_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="activity_type" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ODS\Vle.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ODS\Vle.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="103,42"
+          Id="Package\ODS"
+          TopLeft="290,88" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ODS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ODS\StudentInfo"
+          TopLeft="85,64" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\ODS\Assessment"
+          TopLeft="273,63" />
+        <NodeLayout
+          Size="95,42"
+          Id="Package\ODS\Vle"
+          TopLeft="471,63" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
