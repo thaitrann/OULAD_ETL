@@ -40,8 +40,8 @@ I split control flow into 2 packages:
 - Dim_Regions: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow7.png" alt="Italian Trulli"></p>
 - Dim_Time: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow8.png" alt="Italian Trulli"></p>
 - Fact_Elearning: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow9.png" alt="Italian Trulli"></p>
-- ** ***NOTE***: I could use ODS for loading all tables in DWH but it takes a long time to finish all tables. Therefore, I just use ODS for some tables that have multiple columns to load(Dim_Time, Fact_Elearning). I also checked the similarity between staging tables and ODS tables to ensure data integrity.
-- ** ***NOTE***: According to the description of the database, St_StudentAssessment and St_StudentVle tables don't record student who doesn't submit assessments or doesn't use vle. Therefore, when I load ODS, some students have null values in id_assessment column or id_site column. To fix that problem, I added a line containing only null values in the Dim_Assessment and Dim_Vle tables when loading these tables. this code is into "OLE DB Source" in the data flow of these two tables.
+- ** ***NOTE***: I could use ODS for loading all tables in DWH but it took a long time to finish all tables. Therefore, I just used ODS for some tables that have multiple columns to load(Dim_Time, Fact_Elearning). I also checked the similarity between staging tables and ODS tables to ensure data integrity.
+- ** ***NOTE***: According to the description of the database, St_StudentAssessment and St_StudentVle tables don't record students who don't submit assessments or don't use vle. Therefore, when I load ODS, some students have null values in id_assessment column or id_site column. To fix that problem, I added a line containing only null values in the Dim_Assessment and Dim_Vle tables when loading these tables. this code is into "OLE DB Source" in the data flow of these two tables.
 - Dim_Assessment: 
 ```
 SELECT id_assessment, assessment_type, weight
