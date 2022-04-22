@@ -30,3 +30,13 @@ I split control flow into 2 packages:
 - Data flow for StudentVle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow6.png" alt="Italian Trulli"></p>
 - Data flow for Vle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow7.png" alt="Italian Trulli"></p>
 2. **Load_ODS_DW.dtsx**: This package has control flow and data flow for loading from the the staging table, ODS table to DW.
+- Control Flow: <p align = 'center'><img src="image/Load_ODS_DW/Pipeline_Dwh-Dm.png" alt="Italian Trulli"></p>
+- ODS table: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow1.png" alt="Italian Trulli"></p>
+- Dim_Modules: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow2.png" alt="Italian Trulli"></p>
+- Dim_Presentations: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow3.png" alt="Italian Trulli"></p>
+- Dim_Assessments: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow4.png" alt="Italian Trulli"></p>
+- Dim_Vle: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow5.png" alt="Italian Trulli"></p>
+- Dim_Students: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow6.png" alt="Italian Trulli"></p>
+- Dim_Regions: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow7.png" alt="Italian Trulli"></p>
+- Dim_Time: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow8.png" alt="Italian Trulli"></p>
+- Fact_Elearning: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow9.png" alt="Italian Trulli"></p>
