@@ -59,5 +59,5 @@ SELECT [id_site]
 ```
 ## Report
 ---Updating---
-## Prediction
+## Model for prediction
 ---Updating---
