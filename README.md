@@ -10,5 +10,23 @@
 2. **Data flow architecture** <p align = 'center'><img src="image/Dataflow.png" alt="Italian Trulli"></p> <p align = 'center'><img src="image/Dataflow_full.png" alt="Italian Trulli"></p>
 - **Staging table**: Structure of Staging tables are excactly same sources data, except St_StudentVle have 1 more date_click column. Staging table stores in Stage_Elearning database.
 - **ODS (Operational Data Source)**: ODS is joined from all Staging table. ODS have almost all columns in Staging table. ODS store in ODS_Elearning database.
-- **Take note**: When I create ODS table, 
-## Data warehouse(DWH) - data mart(DM)
+- ** ***NOTE***: I used to create ODS with full data source. It takes a long time to finish, my laptop almost freeze when I ran it and sometimes my laptop's disk was full. So I decided to split St_StudentVle from about 10m rows to 200k rows with this code:
+```
+select top (200000)
+*
+from St_StudentVle
+order by date_click
+```
+This absolutely changed my result, ODS table from storing 100 million rows only has 2 million rows left but I will try to figure out another way to handle full data. sorry for my problem!
+## ETL Implementation
+I split control flow into 2 packages:
+1. **LoadStaging.dtsx**: This package has control flow and data flow for loading from the data source to the staging table.
+- Control Flow: <p align = 'center'><img src="image/LoadStaging/Pipeline_Stage.png" alt="Italian Trulli"></p>
+- Data flow for Assessments.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow1.png" alt="Italian Trulli"></p>
+- Data flow for Course.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow2.png" alt="Italian Trulli"></p>
+- Data flow for StudentAssessment.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow3.png" alt="Italian Trulli"></p>
+- Data flow for StudentInfo.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow4.png" alt="Italian Trulli"></p>
+- Data flow for StudentRegistration.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow5.png" alt="Italian Trulli"></p>
+- Data flow for StudentVle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow6.png" alt="Italian Trulli"></p>
+- Data flow for Vle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow7.png" alt="Italian Trulli"></p>
+2. **Load_ODS_DW.dtsx**: This package has control flow and data flow for loading from the the staging table, ODS table to DW.
