@@ -8,9 +8,9 @@
 ## Data warehouse(DWH) - data mart(DM)
 1. **Type of Schema**: Star schema <p align = 'center'><img src="image/StarSchema.png" alt="Italian Trulli"></p>
 2. **Data flow architecture** <p align = 'center'><img src="image/Dataflow.png" alt="Italian Trulli"></p> <p align = 'center'><img src="image/Dataflow_full.png" alt="Italian Trulli"></p>
-- **Staging table**: Structure of Staging tables are excactly same sources data, except St_StudentVle have 1 more date_click column. Staging table stores in Stage_Elearning database.
-- **ODS (Operational Data Source)**: ODS is joined from all Staging table. ODS have almost all columns in Staging table. ODS store in ODS_Elearning database.
-- ** ***NOTE***: I used to create ODS with full data source. It takes a long time to finish, my laptop almost freeze when I ran it and sometimes my laptop's disk was full. So I decided to split St_StudentVle from about 10m rows to 200k rows with this code:
+- **Staging table**: Structure of Staging tables are excactly the same sources data, except St_StudentVle have 1 more date_click column. Staging table is stored in Stage_Elearning database.
+- **ODS (Operational Data Source)**: ODS is joined from all Staging table. ODS have almost all columns in Staging table. ODS is stored in ODS_Elearning database.
+- ** ***NOTE***: I used to create ODS with full data source. It took a long time to finish, my laptop almost froze when I ran it and sometimes my laptop's disk was full. So I decided to split St_StudentVle from about 10m rows to 200k rows with this code:
 ```
 select top (200000)
 *
