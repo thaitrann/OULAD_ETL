@@ -5,6 +5,97 @@
 1. Source from: https://analyse.kmi.open.ac.uk/open_dataset
 2. **Database schema** <p align = 'center'><img src="image/Database_Schema.png" alt="Italian Trulli"></p>
 3. **Row count** <p align = 'center'><img src="image/Rowcount.png" alt="Italian Trulli"></p>
+4. **Script create schema (Create_Starschema.sql)**
+```
+create table Dim_Assessments(
+	sk_assessment_id int primary key not null,
+	assessment_id int,
+	assessment_type char(100),
+	weight int
+)
+
+create table Dim_Vle(
+	sk_site_id int primary key not null,
+	site_id int,
+	activity_type char(100)
+)
+
+create table Dim_Students(
+	sk_student_id int primary key not null,
+	student_id int,
+	gender char(100),
+	imd_band char(100),
+	highest_education char(100),
+	age_band char(100),
+	disability char(100)
+)
+
+create table Dim_Modules(
+	module_id int primary key not null,
+	module_name char(100),
+	module_length int
+)
+
+create table Dim_Presentations(
+	presentation_id int primary key not null,
+	presentation_name char(100),
+)
+
+create table Dim_Time(
+	time_id int primary key not null,
+	date_registration char(100),
+	month_registration int,
+	day_registration int,
+	year_registration int,
+	---
+	date_unregistration char(100),
+	month_unregistration int,
+	day_unregistration int,
+	year_unregistration int,
+	---
+	date_submitted char(100),
+	month_submitted int,
+	day_submitted int,
+	year_submitted int,
+	---
+	date_deadline char(100),
+	month_deadline int,
+	day_deadline int,
+	year_deadline int,
+	---
+	date_click char(100),
+	month_click int,
+	day_click int,
+	year_click int
+)
+
+create table Dim_Regions(
+	region_id int primary key not null,
+	region_name char(100)
+)
+
+create table Fact_ELearning(
+	row_id int primary key not null,
+	sk_assessment_id int not null FOREIGN KEY REFERENCES Dim_Assessments(sk_assessment_id),
+	module_id int not null FOREIGN KEY REFERENCES Dim_Modules(module_id),
+	presentation_id int not null FOREIGN KEY REFERENCES Dim_Presentations(presentation_id),
+	sk_site_id int not null FOREIGN KEY REFERENCES Dim_Vle(sk_site_id),
+	time_id int not null FOREIGN KEY REFERENCES Dim_Time(time_id),
+	sk_student_id int not null FOREIGN KEY REFERENCES Dim_Students(sk_student_id),
+	region_id int not null FOREIGN KEY REFERENCES Dim_Regions(region_id),
+	---
+	studied_credits int,
+	num_of_prev_attempts int,
+	is_banked int default 0 check(is_banked = 0 or is_banked = 1),
+	is_submission_assessment int check(is_submission_assessment = 0 or is_submission_assessment = 1), 
+	-- check submission status. if students doesn't submit assessment then is_submission = 0, else is_submission_assessment = 1
+	is_submission_late int check(is_submission_late = 0 or is_submission_late = 1), 
+	-- check submission date. if students submit assessment after deadline then is_submission_late = 1, else is_submission_late = 0
+	score_assessment float check(score_assessment >= 0 and score_assessment <= 100),
+	sum_click_vle int,
+	final_result char(100)
+)
+```
 ## Data warehouse(DWH) - data mart(DM)
 1. **Type of Schema**: Star schema <p align = 'center'><img src="image/StarSchema.png" alt="Italian Trulli"></p>
 2. **Data flow architecture** <p align = 'center'><img src="image/Dataflow.png" alt="Italian Trulli"></p> <p align = 'center'><img src="image/Dataflow_full.png" alt="Italian Trulli"></p>
@@ -29,6 +120,114 @@ I split control flow into 2 packages:
 - Data flow for StudentRegistration.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow5.png" alt="Italian Trulli"></p>
 - Data flow for StudentVle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow6.png" alt="Italian Trulli"></p>
 - Data flow for Vle.csv: <p align = 'center'><img src="image/LoadStaging/Dataflow7.png" alt="Italian Trulli"></p>
+- Add column date_submitted(date format) in St_StudentAssessment: 
+```
+ALTER TABLE St_StudentAssessment
+add date_submitted varchar(50)
+
+WITH
+    cte1
+    AS
+    
+    (
+        SELECT
+            s_sta.id_assessment AS id_assessment,
+            s_sta.id_student AS id_student,
+            cast(dateadd(day, cast(s_sta.number_of_days_submitted AS int), DATEFROMPARTS(LEFT(s_a.code_presentation, 4), 
+    CASE 
+        WHEN RIGHT(s_a.code_presentation, 1) = 'B' THEN 2
+    ELSE 10 END, 
+    1)) AS varchar) AS date_submitted
+        FROM St_StudentAssessment s_sta
+            JOIN St_Assessment s_a ON s_sta.id_assessment = s_a.id_assessment
+    ),
+    cte2
+    AS
+    (
+        SELECT
+            cte1.date_submitted AS date_submitted,
+            St_StudentAssessment.id_assessment,
+            St_StudentAssessment.id_student
+        FROM St_StudentAssessment
+            JOIN cte1
+            ON St_StudentAssessment.id_assessment = cte1.id_assessment
+            AND St_StudentAssessment.id_student = cte1.id_student
+    )
+UPDATE St_StudentAssessment
+SET St_StudentAssessment.date_submitted = cte2.date_submitted
+FROM cte2 
+JOIN St_StudentAssessment 
+    ON St_StudentAssessment.id_assessment = cte2.id_assessment
+    AND St_StudentAssessment.id_student = cte2.id_student
+```
+- Add column length to st_studentregistration from st_course
+```
+ALTER TABLE St_StudentRegistration
+add module_length varchar(50)
+
+UPDATE 
+    St_StudentRegistration
+SET 
+    St_StudentRegistration.module_length = St_Course.length
+FROM 
+    St_StudentRegistration
+    left JOIN St_Course 
+		ON St_StudentRegistration.code_module = St_Course.code_module
+		and St_StudentRegistration.code_presentation = St_Course.code_presentation
+```
+- Add column activity_type to St_StudentVle from St_Vle
+```
+ALTER TABLE St_StudentVle
+add activity_type varchar(50)
+
+UPDATE 
+    St_StudentVle
+SET 
+    St_StudentVle.activity_type = St_Vle.activity_type
+FROM 
+    St_StudentVle
+    left JOIN St_Vle 
+		ON St_StudentVle.id_site = St_Vle.id_site
+		and St_StudentVle.code_module = St_Vle.code_module
+		and St_StudentVle.code_presentation = St_Vle.code_presentation
+```
+- Add column assessment_type, nod_deadline, weight, date_deadline to St_StudentAssessment from St_Assessment
+```
+ALTER TABLE St_StudentAssessment
+add assessment_type varchar(50),
+nod_deadline varchar(50),
+weight varchar(50),
+date_deadline varchar(50)
+
+UPDATE 
+    St_StudentAssessment
+SET 
+    St_StudentAssessment.assessment_type = St_Assessment.assessment_type,
+	St_StudentAssessment.nod_deadline = St_Assessment.nod_deadline,
+	St_StudentAssessment.weight = St_Assessment.weight,
+	St_StudentAssessment.date_deadline = St_Assessment.date_deadline
+FROM 
+    St_StudentAssessment
+    left join St_Assessment
+		on St_StudentAssessment.id_assessment = St_Assessment.id_assessment
+```
+- Convert white blank to null value St_StudentRegistration
+```
+update [St_StudentRegistration]
+set date_unregistration = null 
+where date_unregistration = ''
+```
+- Row count all table in db
+```
+CREATE TABLE #counts
+(
+    table_name varchar(255),
+    row_count int
+)
+EXEC sp_MSForEachTable @command1='INSERT #counts (table_name, row_count) SELECT ''?'', COUNT(*) FROM ?'
+SELECT table_name, row_count FROM #counts ORDER BY table_name, row_count DESC
+DROP TABLE #counts
+```
 2. **Load_ODS_DW.dtsx**: This package has control flow and data flow for loading from the the staging table, ODS table to DW.
 - Control Flow: <p align = 'center'><img src="image/Load_ODS_DW/Pipeline_Dwh-Dm.png" alt="Italian Trulli"></p>
 - ODS table: <p align = 'center'><img src="image/Load_ODS_DW/Dataflow1.png" alt="Italian Trulli"></p>
