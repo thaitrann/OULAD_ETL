@@ -1,6 +1,8 @@
 # OULAD - Open University Learning Analytics
 ## Tools
-1. SSIS: Visual Studio 2019, SQL Server
+1. ETL: SSIS
+2. Database: SQL Server
+3. Visualization: Tableau Desktop
 ## Dataset
 1. Source from: https://analyse.kmi.open.ac.uk/open_dataset
 2. **Database schema** <p align = 'center'><img src="image/Database_Schema.png" alt="Italian Trulli"></p>
@@ -256,7 +258,7 @@ SELECT [id_site]
   union 
   select null, null
 ```
-## Report
----Updating---
+## Visualization
+https://tinyurl.com/bdf4wbzd
 ## Model
 ---Updating---
