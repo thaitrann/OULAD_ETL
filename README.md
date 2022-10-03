@@ -260,6 +260,15 @@ SELECT [id_site]
 ```
 ## Visualization
 Link Tableau Public: https://tinyurl.com/bdf4wbzd
-<p align = 'center'><img src="image/visualize/most student are male (52.27%).png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/male.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/without_disabilities.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/20_30%.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/Alevel.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/BBBandFFF.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/2014J_2013J.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/78scores.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/avgscore.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/firsttime.png" alt="Italian Trulli"></p>
+<p align = 'center'><img src="image/visualize/dashboard.png" alt="Italian Trulli"></p>
 ## Model
 ---Updating---
