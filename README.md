@@ -259,6 +259,7 @@ SELECT [id_site]
   select null, null
 ```
 ## Visualization
-https://tinyurl.com/bdf4wbzd
+Link Tableau Public: https://tinyurl.com/bdf4wbzd
+<p align = 'center'><img src="image/visualize/most student are male (52.27%).png" alt="Italian Trulli"></p>
 ## Model
 ---Updating---
